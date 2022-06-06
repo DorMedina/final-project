@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { useState, useEffect } from 'react';
-import Product from './Product';
+import FavProduct from './FavProduct';
 import axios from 'axios';
 
 const Container = styled.div`
@@ -10,31 +10,31 @@ const Container = styled.div`
   justify-content: space-between;
 `;
 
-const Products = (props) => {
+const FavProducts = () => {
   const [productsArr, setProductsArr] = useState([]);
-  const cat = props.category;
-  console.log(cat);
 
   useEffect(() => {
     axios
-      .get('/products', { params: { category: cat } })
+      .get('/favorites/userfav')
       .then((res) => {
         setProductsArr(res.data);
-        console.log(productsArr);
       })
       .catch((err) => {
-        console.error('error from server', err);
-        alert(err);
+        console.error('error from server', err.response.data);
       });
-  }, [cat]);
+  }, []);
 
+  const handleDeleteFav = (id) => {
+    let newProductsArr = productsArr.filter((item) => item._id !== id);
+    setProductsArr(newProductsArr);
+  };
   return (
     <Container>
       {productsArr.map((item) => (
-        <Product item={item} key={item._id} />
+        <FavProduct item={item} key={item._id} onDeleteFav={handleDeleteFav} />
       ))}
     </Container>
   );
 };
 
-export default Products;
+export default FavProducts;

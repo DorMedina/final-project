@@ -1,5 +1,6 @@
-import { FavoriteBorderOutlined, SearchOutlined } from '@material-ui/icons';
+import { Clear, SearchOutlined } from '@material-ui/icons';
 import styled from 'styled-components';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
@@ -64,30 +65,43 @@ const Icon = styled.div`
   }
 `;
 
-const Product = ({ item }) => {
-  const handleFavorite = () => {
-    axios.post('favorites/add', { productID: item._id }).then((res) => {
-      console.log(res.data);
+const FavProduct = (props) => {
+  const [product, setProduct] = useState({});
+
+  useEffect(() => {
+    axios
+      .get(`/products/${props.item.productID}`)
+      .then((res) => {
+        setProduct(res.data);
+      })
+      .catch((err) => {
+        console.error('error from server', err);
+      });
+  }, [props.item.productID]);
+
+  const handleDelete = () => {
+    axios.delete(`favorites/${props.item._id}`).then((res) => {
+      props.onDeleteFav(props.item._id);
     });
   };
 
   return (
     <Container>
       <Circle />
-      <Image src={item.img} />
+      <Image src={product.img} />
       <Info>
         <Icon>
           <Link
             style={{ textDecoration: 'none', color: 'black' }}
-            to={`/products/${item._id}`}
+            to={`/products/${product._id}`}
           >
             <SearchOutlined />
           </Link>
         </Icon>
         <Icon>
-          <FavoriteBorderOutlined
+          <Clear
             style={{ textDecoration: 'none', color: 'black' }}
-            onClick={handleFavorite}
+            onClick={handleDelete}
           />
         </Icon>
       </Info>
@@ -95,4 +109,4 @@ const Product = ({ item }) => {
   );
 };
 
-export default Product;
+export default FavProduct;

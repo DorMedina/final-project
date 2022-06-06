@@ -51,6 +51,7 @@ router.post('/login', async (req, res) => {
     firstName: user.firstName,
     token: generateAuthToken(user),
     isAdmin: user.isAdmin,
+    _id: user._id,
   });
 });
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { mobile } from '../responsive';
-import { Add, Remove } from '@material-ui/icons';
+import { Delete } from '@material-ui/icons';
 
 const Container = styled.div`
   display: flex;
@@ -63,10 +63,12 @@ const ProductPrice = styled.div`
   font-weight: 200;
   ${mobile({ marginBottom: '20px' })}
 `;
+const ProductDelete = styled.div`
+  margin: 10px;
+  ${mobile({ marginBottom: '20px' })};
+`;
 
 const CartInfo = ({ item }) => {
-  // const [quantity, setQuantity] = useState(item.quantity);
-
   return (
     <Container>
       <ProductDetail>
@@ -86,11 +88,12 @@ const CartInfo = ({ item }) => {
       </ProductDetail>
       <PriceDetail>
         <ProductAmountContainer>
-          <Add />
-          <ProductAmount>{item.amount}</ProductAmount>
-          <Remove />
+          <ProductAmount>Amount: {item.quantity}</ProductAmount>
         </ProductAmountContainer>
-        <ProductPrice>${item.price}</ProductPrice>
+        <ProductPrice>${item.price * item.quantity}</ProductPrice>
+        <ProductDelete>
+          <Delete></Delete>
+        </ProductDelete>
       </PriceDetail>
     </Container>
   );

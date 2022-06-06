@@ -66,16 +66,48 @@ const NavBar = () => {
     <Container>
       <Wrapper>
         <Left>
-          <NavLink style={{ textDecoration: 'none' }} to="/boots">
+          <NavLink
+            style={{ textDecoration: 'none' }}
+            to={{
+              pathname: '/boots',
+              state: {
+                category: 'boots',
+              },
+            }}
+          >
             <MenuItem>Boots</MenuItem>
           </NavLink>
-          <NavLink style={{ textDecoration: 'none' }} to="/clothing">
+          <NavLink
+            style={{ textDecoration: 'none' }}
+            to={{
+              pathname: '/clothing',
+              state: {
+                category: 'clothing',
+              },
+            }}
+          >
             <MenuItem>Clothing</MenuItem>
           </NavLink>
-          <NavLink style={{ textDecoration: 'none' }} to="/equipment">
+          <NavLink
+            style={{ textDecoration: 'none' }}
+            to={{
+              pathname: '/equipment',
+              state: {
+                category: 'equipment',
+              },
+            }}
+          >
             <MenuItem>Equipment</MenuItem>
           </NavLink>
-          <NavLink style={{ textDecoration: 'none' }} to="/footballs">
+          <NavLink
+            style={{ textDecoration: 'none' }}
+            to={{
+              pathname: '/footballs',
+              state: {
+                category: 'footballs',
+              },
+            }}
+          >
             <MenuItem>Footballs</MenuItem>
           </NavLink>
         </Left>
@@ -99,9 +131,6 @@ const NavBar = () => {
                 </Badge>
               </MenuItem>
             </NavLink>
-            <MenuItem>
-              <FavoriteBorder />
-            </MenuItem>
           </Right>
         )}
         {isLoggedRedux && (
@@ -116,7 +145,12 @@ const NavBar = () => {
               </MenuItem>
             </NavLink>
             <MenuItem>
-              <FavoriteBorder />
+              <NavLink
+                style={{ textDecoration: 'none', color: 'black' }}
+                to="/favorites"
+              >
+                <FavoriteBorder />
+              </NavLink>
             </MenuItem>
             <NavLink
               style={{ textDecoration: 'none' }}

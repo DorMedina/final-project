@@ -13,6 +13,9 @@ import SingleProduct from './pages/SingleProduct';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Cart from './pages/Cart';
+import Favorites from './pages/Favorites.jsx';
+import AuthGuardRoute from './components/AuthGuardRoute';
+import Success from './pages/Success';
 
 const App = () => {
   return (
@@ -26,10 +29,12 @@ const App = () => {
         <Route path="/cart" component={Cart} />
         <Route path="/home" component={Home} />
         <Route path="/boots" component={Boots} />
-        <Route path="/clothing" component={Clothing} />
-        <Route path="/equipment" component={Equipment} />
-        <Route path="/footballs" component={Footballs} />
+        <Route path="/clothing" component={Boots} />
+        <Route path="/equipment" component={Boots} />
+        <Route path="/footballs" component={Boots} />
         <Route path="/products/:id" component={SingleProduct} />
+        <Route path="/success" component={Success} />
+        <AuthGuardRoute path="/favorites" component={Favorites} />
       </Switch>
     </Router>
   );

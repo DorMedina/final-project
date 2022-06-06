@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import Announcement from '../components/Announcement';
 import Footer from '../components/Footer';
@@ -36,6 +37,7 @@ const Select = styled.select`
 const Option = styled.option``;
 
 const Boots = () => {
+  const location = useLocation();
   const [colour, setColour] = useState('Colour');
 
   const handleColourChange = (event) => {
@@ -46,7 +48,7 @@ const Boots = () => {
     <Container>
       <NavBar />
       <Announcement />
-      <Title>Fotball Boots</Title>
+      <Title>{location.state.category.toUpperCase()}</Title>
       <FilterContainer>
         <Filter>
           <FilterText>Colour:</FilterText>
@@ -78,7 +80,7 @@ const Boots = () => {
           </Select>
         </Filter>
       </FilterContainer>
-      <Products />
+      <Products category={location.state.category} />
       <Footer />
     </Container>
   );

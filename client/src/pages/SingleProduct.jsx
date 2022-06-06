@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { useParams, useHistory } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { cartActions } from '../store/cartRedux';
 import { Add, Remove } from '@material-ui/icons';
 import styled from 'styled-components';
@@ -143,8 +143,15 @@ const SingleProduct = () => {
   };
 
   const handleClick = () => {
-    console.log();
-    dispatch(cartActions.addProduct({ ...product, quantity, size }));
+    console.log(size);
+    dispatch(
+      cartActions.addProduct({
+        ...product,
+        quantity,
+        size,
+        addedTimestamp: JSON.stringify(new Date()),
+      })
+    );
   };
 
   return (
@@ -178,6 +185,7 @@ const SingleProduct = () => {
               <Amount>{quantity}</Amount>
               <Add onClick={() => handleQuantity('inc')} />
             </AmountContainer>
+            {/* disable button */}
             <Button onClick={handleClick}>ADD TO CART</Button>
           </AddContainer>
         </InfoContainer>

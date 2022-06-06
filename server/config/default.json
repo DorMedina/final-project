@@ -1,3 +1,4 @@
 {
-  "jwtKey": "YourPrivateKey"
+  "jwtKey": "YourPrivateKey",
+  "STRIPE_KEY": "sk_test_51L7YeNKxIyLY59TLst6fy6ZT2LBetDZfSHOLx6U0KyJpEVBiU3li5lQtgP8nL6ThUTq9Z02Ln7EQ90IigrOEhcFB00eQ63NnO1"
 }
