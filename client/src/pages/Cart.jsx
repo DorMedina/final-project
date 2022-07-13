@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { cartActions } from '../store/cartRedux';
 import styled from 'styled-components';
 import NavBar from '../components/NavBar';
 import Announcement from '../components/Announcement';
@@ -79,6 +80,7 @@ const Cart = () => {
   const cart = useSelector((state) => state.cart);
   const [stripeToken, setStripeToken] = useState(null);
   const history = useHistory();
+  const dispatch = useDispatch();
 
   const onToken = (token) => {
     setStripeToken(token);
@@ -102,6 +104,9 @@ const Cart = () => {
     stripeToken && cart.total >= 1 && makeRequest();
   }, [stripeToken, cart, cart.total, history]);
 
+  const handleDeleteProduct = (timeStamp) => {
+    dispatch(cartActions.removeProduct(timeStamp));
+  };
   //TODO: remove items
   return (
     <Container>
@@ -116,7 +121,11 @@ const Cart = () => {
         <Bottom>
           <Info>
             {cart.products.map((product) => (
-              <CartInfo key={product.addedTimestamp} item={product} />
+              <CartInfo
+                key={product.addedTimestamp}
+                item={product}
+                onDelete={handleDeleteProduct}
+              />
             ))}
           </Info>
           <Summary>

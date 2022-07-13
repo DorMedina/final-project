@@ -169,7 +169,6 @@ const Register = () => {
               onBlur={handleFocus}
               focused={focused.toString()}
             />
-            <InputError>wrong</InputError>
           </FormInput>
           <FormInput>
             <Input
@@ -178,7 +177,6 @@ const Register = () => {
               onChange={handleLastNameChange}
               value={lastName}
             />
-            <InputError>wrong</InputError>
           </FormInput>
           <FormInput>
             <Input
@@ -187,7 +185,6 @@ const Register = () => {
               onChange={handleEmailChange}
               value={email}
             />
-            <InputError>wrong</InputError>
           </FormInput>
           <FormInput>
             <PasswordInput
@@ -196,7 +193,6 @@ const Register = () => {
               onChange={handlePasswordChange}
               value={password}
             />
-            <InputError>wrong</InputError>
           </FormInput>
           <FormInput>
             <PasswordInput
@@ -205,7 +201,6 @@ const Register = () => {
               onChange={handleConfirmPasswordChange}
               value={confirmPassword}
             />
-            <InputError>wrong</InputError>
           </FormInput>
 
           <Agreement>

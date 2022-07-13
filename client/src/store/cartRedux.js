@@ -13,6 +13,20 @@ const cartSlice = createSlice({
       state.products.push(action.payload);
       state.total += action.payload.price * action.payload.quantity;
     },
+    removeProduct: (state, action) => {
+      state.products.map((product) => {
+        if (product.addedTimestamp === action.payload.addedTimestamp) {
+          const nextCartItems = state.products.filter(
+            (item) => item.addedTimestamp !== product.addedTimestamp
+          );
+
+          state.products = nextCartItems;
+        }
+        return state;
+      });
+      state.quantity -= 1;
+      state.total -= action.payload.price * action.payload.quantity;
+    },
     resetCart: (state) => {
       state.products = [];
       state.quantity = 0;

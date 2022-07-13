@@ -1,4 +1,5 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 import { mobile } from '../responsive';
 import { Delete } from '@material-ui/icons';
@@ -68,31 +69,36 @@ const ProductDelete = styled.div`
   ${mobile({ marginBottom: '20px' })};
 `;
 
-const CartInfo = ({ item }) => {
+const CartInfo = (props) => {
+  console.log(props);
+  const handleDelete = () => {
+    props.onDelete(props.item.addedTimestamp);
+  };
+
   return (
     <Container>
       <ProductDetail>
-        <Image src={item.img} />
+        <Image src={props.item.img} />
         <Details>
           <ProductName>
-            <b>Product:</b> {item.title}
+            <b>Product:</b> {props.item.title}
           </ProductName>
           <ProductId>
-            <b>ID:</b> {item._id}
+            <b>ID:</b> {props.item._id}
           </ProductId>
-          <ProductColor color={item.color} />
+          <ProductColor color={props.item.color} />
           <ProductSize>
-            <b>Size:</b> {item.size}
+            <b>Size:</b> {props.item.size}
           </ProductSize>
         </Details>
       </ProductDetail>
       <PriceDetail>
         <ProductAmountContainer>
-          <ProductAmount>Amount: {item.quantity}</ProductAmount>
+          <ProductAmount>Amount: {props.item.quantity}</ProductAmount>
         </ProductAmountContainer>
-        <ProductPrice>${item.price * item.quantity}</ProductPrice>
-        <ProductDelete>
-          <Delete></Delete>
+        <ProductPrice>${props.item.price * props.item.quantity}</ProductPrice>
+        <ProductDelete onClick={handleDelete}>
+          <Delete />
         </ProductDelete>
       </PriceDetail>
     </Container>

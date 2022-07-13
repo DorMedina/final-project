@@ -143,7 +143,6 @@ const SingleProduct = () => {
   };
 
   const handleClick = () => {
-    console.log(size);
     dispatch(
       cartActions.addProduct({
         ...product,
