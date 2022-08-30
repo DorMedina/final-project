@@ -1,6 +1,7 @@
 import { FavoriteBorderOutlined, SearchOutlined } from '@material-ui/icons';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import axios from 'axios';
 
 const Info = styled.div`
@@ -65,9 +66,10 @@ const Icon = styled.div`
 `;
 
 const Product = ({ item }) => {
+  const isLoggedRedux = useSelector((state) => state.user.currentUser);
+
   const handleFavorite = () => {
     axios.post('favorites/add', { productID: item._id }).then((res) => {
-      console.log(res.data);
     });
   };
 
@@ -75,22 +77,36 @@ const Product = ({ item }) => {
     <Container>
       <Circle />
       <Image src={item.img} />
-      <Info>
-        <Icon>
-          <Link
-            style={{ textDecoration: 'none', color: 'black' }}
-            to={`/products/${item._id}`}
-          >
-            <SearchOutlined />
-          </Link>
-        </Icon>
-        <Icon>
-          <FavoriteBorderOutlined
-            style={{ textDecoration: 'none', color: 'black' }}
-            onClick={handleFavorite}
-          />
-        </Icon>
-      </Info>
+      {isLoggedRedux && (
+        <Info>
+          <Icon>
+            <Link
+              style={{ textDecoration: 'none', color: 'black' }}
+              to={`/products/${item._id}`}
+            >
+              <SearchOutlined />
+            </Link>
+          </Icon>
+          <Icon>
+            <FavoriteBorderOutlined
+              style={{ textDecoration: 'none', color: 'black' }}
+              onClick={handleFavorite}
+            />
+          </Icon>
+        </Info>
+      )}
+      {!isLoggedRedux && (
+        <Info>
+          <Icon>
+            <Link
+              style={{ textDecoration: 'none', color: 'black' }}
+              to={`/products/${item._id}`}
+            >
+              <SearchOutlined />
+            </Link>
+          </Icon>
+        </Info>
+      )}
     </Container>
   );
 };

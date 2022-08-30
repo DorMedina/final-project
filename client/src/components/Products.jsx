@@ -13,7 +13,6 @@ const Container = styled.div`
 const Products = (props) => {
   const [productsArr, setProductsArr] = useState([]);
   const cat = props.category;
-  console.log(cat);
 
   useEffect(() => {
     axios
