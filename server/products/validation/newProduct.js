@@ -5,7 +5,7 @@ function validateProduct(product) {
     title: Joi.string().min(3).required(),
     desc: Joi.string().max(100).required(),
     img: Joi.string().required(),
-    categories: Joi.array().required(),
+    category: Joi.string().required(),
     size: Joi.array().required(),
     color: Joi.string().required(),
     price: Joi.number().required(),

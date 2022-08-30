@@ -20,7 +20,6 @@ const Products = (props) => {
       .get('/products', { params: { category: cat } })
       .then((res) => {
         setProductsArr(res.data);
-        console.log(productsArr);
       })
       .catch((err) => {
         console.error('error from server', err);

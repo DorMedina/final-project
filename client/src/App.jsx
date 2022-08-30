@@ -5,10 +5,7 @@ import {
   Redirect,
 } from 'react-router-dom';
 import Home from './pages/Home';
-import Boots from './pages/Boots';
-import Clothing from './pages/Clothing';
-import Equipment from './pages/Equipment';
-import Footballs from './pages/Footballs';
+import Category from './pages/Boots';
 import SingleProduct from './pages/SingleProduct';
 import Login from './pages/Login';
 import Register from './pages/Register';
@@ -28,10 +25,10 @@ const App = () => {
         <Route path="/register" component={Register} />
         <Route path="/cart" component={Cart} />
         <Route path="/home" component={Home} />
-        <Route path="/boots" component={Boots} />
-        <Route path="/clothing" component={Boots} />
-        <Route path="/equipment" component={Boots} />
-        <Route path="/footballs" component={Boots} />
+        <Route path="/boots" component={Category} />
+        <Route path="/clothing" component={Category} />
+        <Route path="/equipment" component={Category} />
+        <Route path="/footballs" component={Category} />
         <Route path="/products/:id" component={SingleProduct} />
         <Route path="/success" component={Success} />
         <AuthGuardRoute path="/favorites" component={Favorites} />

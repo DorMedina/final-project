@@ -104,10 +104,10 @@ const Cart = () => {
     stripeToken && cart.total >= 1 && makeRequest();
   }, [stripeToken, cart, cart.total, history]);
 
-  const handleDeleteProduct = (timeStamp) => {
-    dispatch(cartActions.removeProduct(timeStamp));
+  const handleDeleteProduct = (item) => {
+    dispatch(cartActions.removeProduct(item));
   };
-  //TODO: remove items
+
   return (
     <Container>
       <NavBar />
@@ -116,7 +116,6 @@ const Cart = () => {
         <Title>YOUR BAG</Title>
         <Top>
           <TopButton>CONTINUE SHOPPING</TopButton>
-          <TopButton>CHECKOUT NOW</TopButton>
         </Top>
         <Bottom>
           <Info>
@@ -141,19 +140,27 @@ const Cart = () => {
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Shipping Discount</SummaryItemText>
-              <SummaryItemPrice>$ -5.90</SummaryItemPrice>
+              <SummaryItemPrice>
+                $ {cart.total >= 50 ? '-5.90' : '0'}
+              </SummaryItemPrice>
             </SummaryItem>
             <SummaryItem type="total">
               <SummaryItemText>Total</SummaryItemText>
-              <SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
+              <SummaryItemPrice>
+                $ {cart.total >= 50 ? cart.total : cart.total + 5.9}
+              </SummaryItemPrice>
             </SummaryItem>
             <StripeCheckout
               name="MEDINA"
               image="https://www.designfreelogoonline.com/wp-content/uploads/2016/07/000749-online-store-logos-design-free-online-E-commerce-cart-logo-maker-01.png"
               billingAddress
               shippingAddress
-              description={`Your total is $${cart.total}`}
-              amount={cart.total * 100}
+              description={`Your total is $${
+                cart.total >= 50 ? cart.total : cart.total + 5.9
+              }`}
+              amount={
+                cart.total >= 50 ? cart.total : cart.total * 100 + 5.9 * 100
+              }
               token={onToken}
               stripeKey={KEY}
             >

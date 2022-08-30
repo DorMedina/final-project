@@ -14,19 +14,31 @@ const cartSlice = createSlice({
       state.total += action.payload.price * action.payload.quantity;
     },
     removeProduct: (state, action) => {
-      state.products.map((product) => {
-        if (product.addedTimestamp === action.payload.addedTimestamp) {
-          const nextCartItems = state.products.filter(
-            (item) => item.addedTimestamp !== product.addedTimestamp
-          );
+      console.log(action);
+      state.products = state.products.filter(
+        (item) => item.addedTimestamp !== action.payload.addedTimestamp
+      );
 
-          state.products = nextCartItems;
-        }
-        return state;
-      });
-      state.quantity -= 1;
+      if (state.quantity !== 0) state.quantity -= 1;
+
       state.total -= action.payload.price * action.payload.quantity;
     },
+
+    // removeProduct: (state, action) => {
+    //   console.log(action);
+    //   state.products.map((product) => {
+    //     if (product.addedTimestamp === action.payload.addedTimestamp) {
+    //       const nextCartItems = state.products.filter(
+    //         (item) => item.addedTimestamp !== product.addedTimestamp
+    //       );
+
+    //       state.products = nextCartItems;
+    //     }
+    //     return state;
+    //   });
+    //   state.quantity -= 1;
+    //   state.total -= action.payload.price * action.payload.quantity;
+    // },
     resetCart: (state) => {
       state.products = [];
       state.quantity = 0;

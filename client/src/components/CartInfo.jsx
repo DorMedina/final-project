@@ -1,5 +1,4 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 import { mobile } from '../responsive';
 import { Delete } from '@material-ui/icons';
@@ -72,7 +71,7 @@ const ProductDelete = styled.div`
 const CartInfo = (props) => {
   console.log(props);
   const handleDelete = () => {
-    props.onDelete(props.item.addedTimestamp);
+    props.onDelete(props.item);
   };
 
   return (
