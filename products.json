@@ -1,0 +1,275 @@
+[{
+  "_id": {
+    "$oid": "6285ffcb3cb181df4d2a99e1"
+  },
+  "title": "Nike Total 90",
+  "desc": "Every child dream",
+  "img": "https://s3.amazonaws.com/nikeinc/assets/86522/nike-total-90-laser-se-4_hd_1600.jpg",
+  "size": [
+    "40",
+    "41",
+    "42",
+    "43",
+    "44"
+  ],
+  "color": "yellow",
+  "price": 100,
+  "inStock": true,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1652948939416"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1652950878553"
+    }
+  },
+  "__v": 0,
+  "category": "boots"
+},{
+  "_id": {
+    "$oid": "629de50542c211ba5073419c"
+  },
+  "title": "Adidas Copa Mundial",
+  "desc": "The most iconic shoe",
+  "img": "https://www.tradeinn.com/f/11/118592/adidas-copa-mundial-football-boots.jpg",
+  "size": [
+    "40",
+    "41",
+    "42",
+    "43",
+    "44"
+  ],
+  "color": "black",
+  "price": 100,
+  "inStock": true,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1654514949255"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1654514949255"
+    }
+  },
+  "__v": 0,
+  "category": "boots"
+},{
+  "_id": {
+    "$oid": "630ccdd0a8f59fcedfadb03b"
+  },
+  "title": "Nike Tiempo",
+  "desc": "The most selling shoe",
+  "img": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/97d6ec89-f701-4569-a5e9-be8784f4c12f/calzado-de-f%C3%BAtbol-para-terrenos-m%C3%BAltiples-tiempo-legend-9-academy-mg-jj4C4w.png",
+  "category": "boots",
+  "size": [
+    "40",
+    "41",
+    "42",
+    "43",
+    "44"
+  ],
+  "color": "black",
+  "price": 100,
+  "inStock": true,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1661783505001"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1661783505001"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "630ccee6a8f59fcedfadb04a"
+  },
+  "title": "F.C. Barcelona 2022/23 Home Kit",
+  "desc": "Mes que un club",
+  "img": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/6ee5fa81-be9c-4d0c-a48a-3d0db669c878/fc-barcelona-2022-23-stadium-home-dri-fit-football-shirt-kGdKhw.png",
+  "category": "clothing",
+  "size": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "XXL"
+  ],
+  "color": "navy",
+  "price": 100,
+  "inStock": true,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1661783782572"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1661783782572"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "630ccf16a8f59fcedfadb04c"
+  },
+  "title": "Arsenal 2022/23 Home Kit",
+  "desc": "The gunners",
+  "img": "https://footsoccerpro.co/wp-content/uploads/2022/05/MAILLOT-ARSENAL-DOMICILE-2022-2023-1.jpg",
+  "category": "clothing",
+  "size": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "XXL"
+  ],
+  "color": "red",
+  "price": 100,
+  "inStock": true,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1661783830351"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1661783830351"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "630ccf4ba8f59fcedfadb04e"
+  },
+  "title": "Borussia Dortmund 2022/23 Home Kit",
+  "desc": "Yellow wall",
+  "img": "https://www.sportsdirect.com/images/products/37779613_l.jpg",
+  "category": "clothing",
+  "size": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "XXL"
+  ],
+  "color": "yellow",
+  "price": 100,
+  "inStock": true,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1661783883369"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1661783883369"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "630cd018a8f59fcedfadb052"
+  },
+  "title": "Football Referee Flags",
+  "desc": "Best Flags",
+  "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKu6EPDDQDxLQoCurU3AeyBYaRPANM6qzwkg&usqp=CAU",
+  "category": "equipment",
+  "size": [
+    "One Size"
+  ],
+  "color": "yellow",
+  "price": 30,
+  "inStock": true,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1661784088774"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1661784088774"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "630cd0b1a8f59fcedfadb059"
+  },
+  "title": "Subtitue Vest",
+  "desc": "to wear on the bench",
+  "img": "https://ae01.alicdn.com/kf/H2c9f22d6aa634dc4a0dd27da292001647.jpg",
+  "category": "equipment",
+  "size": [
+    "One Size"
+  ],
+  "color": "chartreuse",
+  "price": 30,
+  "inStock": true,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1661784241243"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1661784241243"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "630cd296a8f59fcedfadb067"
+  },
+  "title": "Nike Premier League Ball",
+  "desc": "Official match ball",
+  "img": "https://static.nike.com/a/images/t_default/298e0f71-db7d-4816-95da-8d1b14e5cb31/premier-league-flight-football-489n4q.png",
+  "category": "footballs",
+  "size": [
+    "One Size"
+  ],
+  "color": "white",
+  "price": 60,
+  "inStock": true,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1661784726233"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1661784726233"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "630cd2eca8f59fcedfadb070"
+  },
+  "title": "Puma La Liga Ball",
+  "desc": "Official match ball",
+  "img": "https://gfx.r-gol.com/media/res/products/276/136276/pilka-puma-laliga-1-accelerate-fifa-quality-pro-083504-01-5_1.png",
+  "category": "footballs",
+  "size": [
+    "One Size"
+  ],
+  "color": "white",
+  "price": 60,
+  "inStock": true,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1661784812158"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1661784812158"
+    }
+  },
+  "__v": 0
+}]

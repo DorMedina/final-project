@@ -19,3 +19,5 @@ $ cd ../lorem
 $ npm install
 $ npm start
 ```
+
+import products.json to the mongo database.
