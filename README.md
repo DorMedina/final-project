@@ -20,4 +20,4 @@ $ npm install
 $ npm start
 ```
 
-- import products.json to the mongo database.
+- Import products.json to the mongo database.
