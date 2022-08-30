@@ -6,9 +6,9 @@ This project is my final project for the course and its an online shop.
 
 Project is created with:
 
-- React version: 17.0.2
-- Styled Components: 5.3.5
-- Express: 4.17.2
+- npm: 8.1.2
+- React: 17.0.2
+- Nodejs: 16.13.1
 
 ## Setup
 
